@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.group6.medicaltest'
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.group6.medicaltest"
         minSdk 30
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
