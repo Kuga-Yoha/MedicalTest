@@ -6,14 +6,14 @@ import androidx.room.*
 interface NurseDAO {
 
     @Insert
-    fun insertNurse(nurse: Nurse)
+    suspend fun insertNurse(nurse: Nurse)
 
     @Update
-    fun updateNurse(nurse: Nurse)
+    suspend fun updateNurse(nurse: Nurse)
 
     @Delete
-    fun deleteNurse(nurse: Nurse)
+    suspend fun deleteNurse(nurse: Nurse)
 
-    @Query("SELECT * FROM nurse")
-    fun getAllNurse(): List<Nurse>
+    @Query("Select * from nurse")
+    suspend fun getALLNurse(): List<Nurse>
 }
