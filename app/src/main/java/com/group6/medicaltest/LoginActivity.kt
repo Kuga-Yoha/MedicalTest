@@ -12,8 +12,8 @@ import com.group6.medicaltest.entity.Nurse
 import com.group6.medicaltest.repository.NurseRepository
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var nurseId: EditText
-    lateinit var nurseRepo: NurseRepository
+    //private lateinit var nurseId: EditText
+    private var nurseRepo: NurseRepository = NurseRepository(application)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +26,8 @@ class LoginActivity : AppCompatActivity() {
         val login = findViewById<View>(R.id.buttonLogin) as Button
         login.setOnClickListener() {
             //Login for Validating Credentials with Database
-            val nurse = Nurse(nurseId.text.toString().toLong(), "", "", "", password.text.toString())
-
-            var success = 1
-            if(success == 1){
+            val nurse = nurseRepo.getNurseByIdAndPassword(Nurse(nurseId.text.toString().toLong(), "", "", "", password.text.toString()))
+            if(nurse != null){
 
                 // Storing the username (nurseId) into Shared Preferences.
                 val editor = sharedPreferences.edit()
