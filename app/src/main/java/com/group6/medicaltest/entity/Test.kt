@@ -1,4 +1,4 @@
-package com.group6.medicaltest
+package com.group6.medicaltest.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
