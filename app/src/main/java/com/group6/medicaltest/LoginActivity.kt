@@ -8,23 +8,25 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.room.Room
+import com.group6.medicaltest.entity.Nurse
+import com.group6.medicaltest.repository.NurseRepository
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var nurseId: EditText
-    lateinit var database: MedicalTestDatabase
+    lateinit var nurseRepo: NurseRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         val nurseId = findViewById<EditText>(R.id.editTextUserName)
+        val password = findViewById<EditText>(R.id.editTextTextPassword)
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
 
         val login = findViewById<View>(R.id.buttonLogin) as Button
         login.setOnClickListener() {
-//            Login for Validating Credentials with Database
-
-
+            //Login for Validating Credentials with Database
+            val nurse = Nurse(nurseId.text.toString().toLong(), "", "", "", password.text.toString())
 
             var success = 1
             if(success == 1){
