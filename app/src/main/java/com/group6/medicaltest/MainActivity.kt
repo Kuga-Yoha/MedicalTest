@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import androidx.annotation.WorkerThread
 import androidx.room.Room
+import com.group6.medicaltest.database.MedicalTestDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

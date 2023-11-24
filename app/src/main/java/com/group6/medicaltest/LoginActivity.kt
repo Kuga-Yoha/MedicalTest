@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.room.Room
+import com.group6.medicaltest.database.MedicalTestDatabase
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var nurseId: EditText
