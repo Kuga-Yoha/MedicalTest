@@ -15,13 +15,15 @@ import androidx.room.PrimaryKey
 
 
     )
+
 data class Patient(
     @PrimaryKey(autoGenerate = true)
-    val patientId: Long,
+    val patientId: Int,
     val firstName: String,
     val lastName: String,
     val department: String,
-    val nurseId: Long,
-    val room: String
+    val nurseId: String,
+    val room: Int
+    // Add other fields as needed
 )
 
