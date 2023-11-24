@@ -14,6 +14,6 @@ interface NurseDAO {
     @Delete
     fun deleteNurse(nurse: Nurse)
 
-    @Query("Select * from nurse")
-    fun getALLNurse(): List<Nurse>
+    @Query("SELECT * FROM nurse")
+    fun getAllNurse(): List<Nurse>
 }
