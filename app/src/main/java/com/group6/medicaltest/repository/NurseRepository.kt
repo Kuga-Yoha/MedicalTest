@@ -1,8 +1,9 @@
-package com.group6.medicaltest.database
+package com.group6.medicaltest.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
 import com.group6.medicaltest.dao.NurseDAO
+import com.group6.medicaltest.database.MedicalTestDatabase
 import com.group6.medicaltest.entity.Nurse
 
 import com.group6.medicaltest.utils.subscribeOnBackground
