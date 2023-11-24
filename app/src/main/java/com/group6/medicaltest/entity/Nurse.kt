@@ -1,16 +1,14 @@
-package com.group6.medicaltest
+package com.group6.medicaltest.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName="patient")
-data class Patient(
+@Entity(tableName="nurse")
+data class Nurse(
     @PrimaryKey(autoGenerate = true)
-    val patientId: Long,
+    val nurseId: Long,
     val firstName: String,
     val lastName: String,
     val department: String,
-//    val nursId:
-    val room: String
+    val password: String
 )
-

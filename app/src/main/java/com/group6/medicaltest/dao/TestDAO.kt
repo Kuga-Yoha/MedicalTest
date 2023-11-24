@@ -1,6 +1,8 @@
-package com.group6.medicaltest
+package com.group6.medicaltest.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.group6.medicaltest.entity.Test
 
 @Dao
 interface TestDAO {
@@ -15,5 +17,5 @@ interface TestDAO {
     fun deleteTest(test: Test)
 
     @Query("Select * from test")
-    fun getALLTest(): List<Test>
+    fun getAllTests(): LiveData<List<Test>>
 }
