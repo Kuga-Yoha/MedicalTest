@@ -7,9 +7,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.room.Room
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var nurseId: EditText
+    lateinit var database: MedicalTestDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,8 @@ class LoginActivity : AppCompatActivity() {
         val login = findViewById<View>(R.id.buttonLogin) as Button
         login.setOnClickListener() {
 //            Login for Validating Credentials with Database
+
+
 
             var success = 1
             if(success == 1){
