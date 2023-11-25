@@ -34,7 +34,7 @@ class TestRepository(application:Application) {
 
     fun delete(test:Test){
         subscribeOnBackground {
-            testDao.updateTest(test)
+            testDao.deleteTest(test)
         }
     }
 
