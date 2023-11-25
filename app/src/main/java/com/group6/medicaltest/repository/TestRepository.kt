@@ -25,6 +25,12 @@ class TestRepository(application: Application) {
         }
     }
 
+    fun getTestReportByPatientId(patientId: Int){
+        subscribeOnBackground {
+            testDao.getTestReportByPatientId(patientId)
+        }
+    }
+
     fun update(test: Test) {
         subscribeOnBackground {
             testDao.updateTest(test)

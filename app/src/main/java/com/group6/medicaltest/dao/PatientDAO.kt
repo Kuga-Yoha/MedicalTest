@@ -7,6 +7,7 @@ import com.group6.medicaltest.entity.Patient
 @Dao
 interface PatientDAO {
 
+//    We need only Insert, Fetch and Update
     @Insert
     fun insertPatient(patient: Patient)
 

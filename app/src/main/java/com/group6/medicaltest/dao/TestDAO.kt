@@ -8,6 +8,7 @@ import com.group6.medicaltest.entity.Test
 @Dao
 interface TestDAO {
 
+    //    We need only Insert and Fetch
     @Insert
     fun insertTest(test: Test)
 
@@ -20,6 +21,6 @@ interface TestDAO {
     @Query("Select * from test")
     fun getAllTests(): LiveData<List<Test>>
 
-    @Query("SELECT * From test where patientId= : patientId")
-    fun getTestReport(): LiveData<List<Test>>
+//    @Query("SELECT * From test where patientId= : patientId")
+    fun getTestReportByPatientId(patientId: Int): LiveData<List<Test>>
 }

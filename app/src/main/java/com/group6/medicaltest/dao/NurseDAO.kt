@@ -20,5 +20,5 @@ interface NurseDAO {
     fun getAllNurses(): LiveData<List<Nurse>>
 
     @Query("select * from nurse where nurseId = :nurseId and password = :password")
-    fun findByIdAndPassword(nurseId: Long, password: String)
+    fun findByIdAndPassword(nurseId: Int, password: String)
 }

@@ -28,7 +28,18 @@ class ViewTestInfoActivity : AppCompatActivity() {
         val patientId = intent.getIntExtra("patientId", -1)
 
         // Fetch and observe test data for the given patient
-        testViewModel.getTestsForPatient(patientId).observe(this, { tests ->
+//        testViewModel.getTestsForPatient(patientId).observe(this, { tests ->
+//            if (tests.isNotEmpty()) {
+//                val firstTest = tests[0]
+//                textViewTestId.text = "Test ID: ${firstTest.testId}"
+//                textViewBPL.text = "BPL: ${firstTest.BPL}"
+//                textViewBPH.text = "BPH: ${firstTest.BPH}"
+//            } else {
+//
+//            }
+//        })
+
+        testViewModel.(patientId).observe(this, { tests ->
             if (tests.isNotEmpty()) {
                 val firstTest = tests[0]
                 textViewTestId.text = "Test ID: ${firstTest.testId}"

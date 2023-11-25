@@ -16,7 +16,7 @@ class TestViewModel(application: Application) : AndroidViewModel(application) {
         testsForPatient = repository.allTests
     }
 
-    fun getTestsForPatient(patientId: Int): LiveData<List<Test>> {
-        return repository.getTestsForPatient(patientId)
-    }
+//    fun getTestsForPatient(patientId: Int): LiveData<List<Test>> {
+//        return repository.getTestsForPatient(patientId)
+//    }
 }
