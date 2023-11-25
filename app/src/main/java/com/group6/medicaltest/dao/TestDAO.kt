@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.group6.medicaltest.entity.Test
 
+
 @Dao
 interface TestDAO {
 
@@ -18,4 +19,7 @@ interface TestDAO {
 
     @Query("Select * from test")
     fun getAllTests(): LiveData<List<Test>>
+
+    @Query("SELECT * From test where patientId= : patientId")
+    fun getTestReport(): LiveData<List<Test>>
 }
