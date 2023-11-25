@@ -11,6 +11,7 @@ import androidx.room.Room
 import com.group6.medicaltest.entity.Nurse
 import com.group6.medicaltest.repository.NurseRepository
 
+
 class LoginActivity : AppCompatActivity() {
     //private lateinit var nurseId: EditText
     private var nurseRepo: NurseRepository = NurseRepository(application)

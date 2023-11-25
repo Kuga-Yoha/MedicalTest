@@ -5,38 +5,39 @@ import androidx.lifecycle.LiveData
 import com.group6.medicaltest.dao.PatientDAO
 import com.group6.medicaltest.database.MedicalTestDatabase
 import com.group6.medicaltest.entity.Patient
-
 import com.group6.medicaltest.utils.subscribeOnBackground
 
-class PatientRepository(application:Application) {
+class PatientRepository(application: Application) {
 
-    private var patientDao : PatientDAO
-    private var allPatients : LiveData<List<Patient>>
-    
+    private var patientDao: PatientDAO
+    var allPatients: LiveData<List<Patient>>
+
     private val database = MedicalTestDatabase.getInstance(application)
 
     init {
-            patientDao = database.patientDao()
-            allPatients = patientDao.getAllPatients()
+        patientDao = database.patientDao()
+        allPatients = patientDao.getAllPatients()
     }
 
-    fun insert(patient:Patient){
+    fun getPatientById(patientId: Int): LiveData<Patient> {
+        return patientDao.getPatientById(patientId)
+    }
+
+    fun insert(patient: Patient) {
         subscribeOnBackground {
             patientDao.insertPatient(patient)
         }
     }
 
-    fun update(patient:Patient){
+    fun update(patient: Patient) {
         subscribeOnBackground {
             patientDao.updatePatient(patient)
         }
     }
 
-    fun delete(patient:Patient){
+    fun delete(patient: Patient) {
         subscribeOnBackground {
             patientDao.deletePatient(patient)
         }
     }
-
 }
-

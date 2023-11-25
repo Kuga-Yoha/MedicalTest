@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context=".TestActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextTestId"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Test Info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:hint="Test ID" />
+
+    <EditText
+        android:id="@+id/editTextPatientId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTestId"
+        android:layout_marginTop="8dp"
+        android:hint="@string/PatientID" />
+
+    <EditText
+        android:id="@+id/editTextNurseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPatientId"
+        android:layout_marginTop="8dp"
+        android:hint="@string/nurse_id" />
+
+    <EditText
+        android:id="@+id/editTextBPL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNurseId"
+        android:layout_marginTop="8dp"
+        android:hint="@string/bpl" />
+
+    <EditText
+        android:id="@+id/editTextBPH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBPL"
+        android:layout_marginTop="8dp"
+        android:hint="@string/bph" />
+
+    <EditText
+        android:id="@+id/editTextTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBPH"
+        android:layout_marginTop="8dp"
+        android:hint="@string/temperature" />
+
+    <Button
+        android:id="@+id/buttonSaveTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTemperature"
+        android:layout_marginTop="16dp"
+        android:text="@string/save_test" />
+
+</RelativeLayout>
