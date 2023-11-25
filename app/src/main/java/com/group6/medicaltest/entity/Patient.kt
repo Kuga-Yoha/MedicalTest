@@ -13,7 +13,6 @@ import androidx.room.PrimaryKey
         onDelete = ForeignKey.CASCADE
     )]
 
-
     )
 
 data class Patient(

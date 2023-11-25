@@ -13,6 +13,8 @@ class NurseRepository(application:Application) {
     private var nurseDao : NurseDAO
     private var allNurses : LiveData<List<Nurse>>
 
+
+
     private val database = MedicalTestDatabase.getInstance(application)
 
     init {
@@ -35,6 +37,12 @@ class NurseRepository(application:Application) {
     fun delete(nurse: Nurse){
         subscribeOnBackground {
             nurseDao.deleteNurse(nurse)
+        }
+    }
+
+    fun getNurseByIdAndPassword(nurse: Nurse) {
+        subscribeOnBackground {
+            nurse.password?.let { nurseDao.findByIdAndPassword(nurse.nurseId, it) }
         }
     }
 
