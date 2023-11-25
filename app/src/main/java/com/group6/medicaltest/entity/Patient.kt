@@ -23,6 +23,7 @@ data class Patient(
     val department: String,
     val nurseId: Int,
     val room: Int
+
     // Add other fields as needed
 )
 
