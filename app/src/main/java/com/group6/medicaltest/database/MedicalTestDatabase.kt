@@ -60,6 +60,7 @@ abstract class MedicalTestDatabase : RoomDatabase() {
                 patientDao.insertPatient(Patient(0,"Haneef","Hussein", "ICU",1, 120 ))
 
 
+
             }
         }
     }

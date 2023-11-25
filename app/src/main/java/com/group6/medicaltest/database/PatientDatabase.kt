@@ -9,7 +9,7 @@ import com.group6.medicaltest.dao.PatientDAO
 import com.group6.medicaltest.dao.TestDAO
 import com.group6.medicaltest.entity.Nurse
 import com.group6.medicaltest.entity.Patient
-import junit.framework.Test
+import com.group6.medicaltest.entity.Test
 
 @Database(entities = [Nurse::class, Patient::class, Test::class], version = 1)
 abstract class PatientDatabase : RoomDatabase() {
