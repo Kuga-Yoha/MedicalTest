@@ -13,7 +13,6 @@ import androidx.room.PrimaryKey
         onDelete = ForeignKey.CASCADE
     )]
 
-
     )
 
 data class Patient(
@@ -22,7 +21,7 @@ data class Patient(
     val firstName: String,
     val lastName: String,
     val department: String,
-    val nurseId: String,
+    val nurseId: Int,
     val room: Int
     // Add other fields as needed
 )
