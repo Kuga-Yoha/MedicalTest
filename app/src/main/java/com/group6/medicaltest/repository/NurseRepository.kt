@@ -40,10 +40,9 @@ class NurseRepository(application:Application) {
         }
     }
 
-    fun getNurseByIdAndPassword(nurse: Nurse) {
-        subscribeOnBackground {
-            nurse.password?.let { nurseDao.findByIdAndPassword(nurse.nurseId, it) }
-        }
+    fun getNurseByIdAndPassword(nurse: Nurse): Nurse {
+         var nurse= nurseDao.findByIdAndPassword(nurse.nurseId, nurse.password)
+        return  nurse
     }
 
 }

@@ -14,7 +14,7 @@ import androidx.room.PrimaryKey
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = Nurse::class,
+            entity = Patient::class,
             parentColumns = ["patientId"],
             childColumns = ["patientId"],
             onDelete = ForeignKey.CASCADE
@@ -23,9 +23,9 @@ import androidx.room.PrimaryKey
 )
 data class Test(
     @PrimaryKey(autoGenerate = true)
-    val testId: Long,
-    val patientId: String,
-    val nurseId: Long,
+    val testId: Int,
+    val patientId: Int,
+    val nurseId: Int,
     val BPL: String,
     val BPH: String,
     val temperature: String,
