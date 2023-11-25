@@ -9,8 +9,8 @@ import androidx.room.PrimaryKey
 data class Nurse(
     @PrimaryKey(autoGenerate = false)
     val nurseId: Long,
-    val firstName: String,
-    val lastName: String,
-    val department: String,
-    val password: String
+    val firstName: String?,
+    val lastName: String?,
+    val department: String?,
+    val password: String?
 )
