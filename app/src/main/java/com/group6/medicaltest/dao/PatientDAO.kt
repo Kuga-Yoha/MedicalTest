@@ -18,4 +18,5 @@ interface PatientDAO {
 
     @Query("Select * from patient")
     fun getAllPatients(): LiveData<List<Patient>>
+    abstract fun getPatientById(patientId: Int): LiveData<Patient>
 }
