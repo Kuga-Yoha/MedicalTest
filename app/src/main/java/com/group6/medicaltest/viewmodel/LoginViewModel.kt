@@ -1,6 +1,7 @@
 package com.group6.medicaltest.viewmodel
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -27,13 +28,17 @@ class LoginViewModel(app: Application) : AndroidViewModel(app) {
     fun login(nurseId: Int, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+
                 // Perform the login operation
                 val nurse = nurseRepository.getNurseByIdAndPassword(Nurse(nurseId, "", "", "", password))
+                Log.d("ABCCCCCC", nurse.toString())
 
-
-                if(nurse != null) {}
+                if(nurse != null) {
+                }
                 // Check if the login was successful (example condition, modify as needed)
-                val loginSuccessful = true//nurse?.isNotEmpty() == true
+//                val loginSuccessful = true//nurse?.isNotEmpty() == true
+                val loginSuccessful = nurse != null
+
 
                 // Update the MutableLiveData with the result
                 withContext(Dispatchers.Main) {

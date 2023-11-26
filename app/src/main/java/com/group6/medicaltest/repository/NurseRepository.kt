@@ -40,7 +40,7 @@ class NurseRepository(application:Application) {
         }
     }
 
-    fun getNurseByIdAndPassword(nurse: Nurse) {
+    fun getNurseByIdAndPassword(nurse: Nurse): LiveData<List<Nurse>> {
          return nurseDao.findByIdAndPassword(nurse.nurseId, nurse.password)
     }
 }

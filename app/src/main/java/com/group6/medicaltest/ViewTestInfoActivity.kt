@@ -38,16 +38,5 @@ class ViewTestInfoActivity : AppCompatActivity() {
 //
 //            }
 //        })
-
-        testViewModel.(patientId).observe(this, { tests ->
-            if (tests.isNotEmpty()) {
-                val firstTest = tests[0]
-                textViewTestId.text = "Test ID: ${firstTest.testId}"
-                textViewBPL.text = "BPL: ${firstTest.BPL}"
-                textViewBPH.text = "BPH: ${firstTest.BPH}"
-            } else {
-
-            }
-        })
     }
 }

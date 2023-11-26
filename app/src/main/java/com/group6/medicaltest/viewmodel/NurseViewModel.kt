@@ -3,6 +3,7 @@ package com.group6.medicaltest.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.group6.medicaltest.dao.NurseDAO
 import com.group6.medicaltest.entity.Nurse
 import com.group6.medicaltest.repository.NurseRepository
 import kotlinx.coroutines.launch

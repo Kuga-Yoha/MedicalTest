@@ -3,6 +3,8 @@ package com.group6.medicaltest.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.group6.medicaltest.entity.Nurse
+import kotlinx.coroutines.flow.Flow
+
 
 @Dao
 interface NurseDAO {
@@ -20,5 +22,5 @@ interface NurseDAO {
     fun getAllNurses(): LiveData<List<Nurse>>
 
     @Query("select * from nurse where nurseId = :nurseId and password = :password")
-    fun findByIdAndPassword(nurseId: Int, password: String)
+    fun findByIdAndPassword(nurseId: Int, password: String): LiveData<Nurse>
 }

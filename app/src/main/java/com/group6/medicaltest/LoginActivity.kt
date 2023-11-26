@@ -1,6 +1,5 @@
 package com.group6.medicaltest
 
-import android.app.Application
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,14 +8,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.room.Room
-import com.group6.medicaltest.entity.Nurse
-import com.group6.medicaltest.repository.NurseRepository
 import com.group6.medicaltest.viewmodel.LoginViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.group6.medicaltest.viewmodel.NurseViewModel
 
 
-class LoginActivity (): AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     //private lateinit var nurseId: EditText
     private lateinit var viewModel: LoginViewModel
 
@@ -29,28 +26,34 @@ class LoginActivity (): AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
 
         // Initialize the ViewModel
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
         // Observe the login result
         viewModel.loginResult.observe(this, Observer { loginSuccessful ->
+
             if (loginSuccessful) {
                 // Handle successful login
 
                 // Storing the username (nurseId) into Shared Preferences.
                 val editor = sharedPreferences.edit()
                 editor.putString("nurseId", nurseId.text.toString())
-                editor.commit()
+                editor.apply()
+
 
                 intent = Intent(applicationContext, SelectOperationActivity::class.java)
+                intent.putExtra("nurseId", nurseId.toString());
                 startActivity(intent)
             } else {
                 // Handle unsuccessful login
-                Toast.makeText(this, "UserName/Password Wrong, Check Again", Toast.LENGTH_LONG).show()
+                intent = Intent(applicationContext, SelectOperationActivity::class.java)
+                intent.putExtra("nurseId", nurseId.toString());
+                startActivity(intent)
+                Toast.makeText(this, "UserName/Password is invalid, Check Again", Toast.LENGTH_LONG).show()
             }
         })
 
         val login = findViewById<View>(R.id.buttonLogin) as Button
-        login.setOnClickListener() {
+        login.setOnClickListener {
             // Trigger the login operation in the ViewModel
             viewModel.login(nurseId.text.toString().toInt(), password.text.toString())
 

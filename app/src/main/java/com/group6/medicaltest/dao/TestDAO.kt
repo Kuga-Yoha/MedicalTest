@@ -21,6 +21,6 @@ interface TestDAO {
     @Query("Select * from test")
     fun getAllTests(): LiveData<List<Test>>
 
-//    @Query("SELECT * From test where patientId= : patientId")
+    @Query("SELECT * From test where patientId = :patientId")
     fun getTestReportByPatientId(patientId: Int): LiveData<List<Test>>
 }

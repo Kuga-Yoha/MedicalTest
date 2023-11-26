@@ -16,7 +16,7 @@ class TestViewModel(private val repository: TestRepository): ViewModel(){
         repository.insert(test)
     }
 
-    fun getTestDetailsByPatientId(test: Test) = viewModelScope.launch {
+    fun getTestsForPatient(test: Test) = viewModelScope.launch {
         repository.getTestReportByPatientId(test.patientId)
     }
 }

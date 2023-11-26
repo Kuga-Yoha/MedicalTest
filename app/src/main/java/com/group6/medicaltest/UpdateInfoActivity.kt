@@ -27,6 +27,9 @@ class UpdateInfoActivity : AppCompatActivity() {
         editTextRoom = findViewById(R.id.editTextRoom)
         buttonUpdate = findViewById(R.id.buttonUpdate)
 
+
+        val nurseId = intent.getStringExtra("nurseId").toString().toInt()
+
         // Assuming you have a ViewModel class for Patient
         patientViewModel = ViewModelProvider(this).get(PatientViewModel::class.java)
 
@@ -53,7 +56,7 @@ class UpdateInfoActivity : AppCompatActivity() {
             val updatedRoom = editTextRoom.text.toString()
 
             // Create a Patient object with updated information
-            val updatedPatient = Patient(patientId, updatedFirstName, updatedLastName, updatedDepartment, updatedRoom)
+            val updatedPatient = Patient(patientId, updatedFirstName, updatedLastName, updatedDepartment, nurseId, updatedRoom)
 
             // Update patient information in the ViewModel
             patientViewModel.updatePatient(updatedPatient)
